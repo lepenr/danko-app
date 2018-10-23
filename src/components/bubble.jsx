@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import InputText from "./inputText";
 
 import "../Bubble.css";
-
+//test
 class Bubble extends Component {
   render() {
     return (

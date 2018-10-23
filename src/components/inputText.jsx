@@ -24,7 +24,7 @@ class InputText extends Component {
     // add e.target.value to it
     // resave to state.value
   };
-
+  //te  dasd asd asdasdasdasst
   render() {
     console.log("prosp", this.props);
     return (

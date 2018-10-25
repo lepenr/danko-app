@@ -19,11 +19,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("test", this.state.value);
-    console.log("test", this.state.bubbleValue);
-
-    console.log("test");
-
     return (
       <div className="App">
         <header className="App-header">

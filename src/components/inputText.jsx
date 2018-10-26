@@ -42,27 +42,31 @@ class InputText extends Component {
       let newArray = temp.split(" ");
       let array = newArray[0] + " " + newArray[newArray.length - 1];
       let middlValue = "";
-      //outputArray.push(array + " ");
       let firstElement = newArray.shift();
       let secondElement = newArray.pop();
-      console.log(newArray.length);
-      //outputArray.push(firstElement + " " + secondElement + " " + newArray);
-      console.log("mojPole", newArray);
-      let test = newArray;
 
+      let test = newArray;
+      let calculator = [];
       newArray.map(sentece => {
         let random = Math.floor(Math.random() * newArray.length);
-        middlValue = middlValue + " " + test[random]; //newArray[random];
-        test.slice(random, 1);
-        console.log("random", random);
+        while (calculator.includes(random)) {
+          //ak to tam je false
+          random = Math.floor(Math.random() * newArray.length);
+        }
+        middlValue = middlValue + " " + newArray[random]; //newArray[random];
+        calculator.push(random);
       });
+
+      let string1 = "";
+      for (let i = 0; i < newArray.length; i++) {
+        string1 = string1 + " " + newArray[i];
+        newArray.slice(2, 3);
+      }
+
       outputArray.push(firstElement + middlValue + " " + secondElement);
-      console.log("middle", middlValue);
     });
-    console.log("outputArray", outputArray);
     return outputArray;
   };
-  //te  dasd asd asdasdasdasst
   render() {
     console.log("prosp", this.props);
     return (
@@ -70,7 +74,8 @@ class InputText extends Component {
         <textarea
           className="form-control"
           id="exampleTextarea"
-          rows="3"
+          maxlength="200"
+          rows="2"
           value={this.state.value}
           onChange={e => this.handleChange(e.target)}
         />

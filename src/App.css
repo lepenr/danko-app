@@ -4,12 +4,12 @@
 
 .App-logo {
   --animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 50vmin;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 120vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,5 +36,47 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 430px) {
+  .speech-bubble {
+  }
+  .App-logo {
+    --animation: App-logo-spin infinite 20s linear;
+    height: 20vmin;
+  }
+
+  .App-header {
+    background-color: #282c34;
+    min-height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  .btn-cust {
+    margin: 5px 10px 0 20px;
+  }
+  .btn {
+    font-size: 0.6rem !important;
+  }
+}
+
+@media only screen and (max-width: 630px) and (max-height: 900px) {
+  .form-control {
+    font-size: 0.61rem !important;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 291px) {
+  .App-logo {
+    --animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
   }
 }

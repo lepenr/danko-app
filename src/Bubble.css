@@ -1,10 +1,10 @@
 .bubble {
   position: relative;
-  font-size: 15px;
+  font-size: 17px;
   bottom: 50px;
   min-width: 180px;
   width: 250px;
-  left: 210px;
+  left: 225px;
   bottom: 100px;
 }
 
@@ -89,7 +89,7 @@
     bottom: 50px;
     min-width: 80px;
     width: 120px;
-    left: 100px;
+    left: 105px;
     bottom: 50px;
   }
 }
@@ -100,7 +100,29 @@
     bottom: 50px;
     min-width: 80px;
     width: 110px;
-    left: 90px;
+    left: 95px;
     bottom: 50px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  .bubble {
+    font-size: 7px;
+    bottom: 30px;
+    min-width: 80px;
+    width: 110px;
+    left: 90px;
+    bottom: 30px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 291px) {
+  .bubble {
+    font-size: 7px;
+    bottom: 10px;
+    min-width: 80px;
+    width: 110px;
+    left: 90px;
+    bottom: 10px;
   }
 }

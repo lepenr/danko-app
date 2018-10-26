@@ -22,12 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {
-            //this.state.bubbleValue ? (
-            <Bubble bubbleValue={this.state.bubbleValue} />
-            // ) : (
-            // ""
-          }
+          {<Bubble bubbleValue={this.state.bubbleValue} />}
           <Image />
           <p />
           <InputText

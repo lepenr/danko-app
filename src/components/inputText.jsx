@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
+import Footer from "./footer";
 
 class InputText extends Component {
   //state = {  }
@@ -19,7 +20,18 @@ class InputText extends Component {
       "Národná rada môže konať len v zmysle zákona, takáto kompetencia Národnej rade dané nie.",
       "Hľadám riešenia aj tohto problému, ktorého som zdedil.",
       "Vláda nestojí a nepadá na žiadnom ministrovi a na žiadnom koncesionárskom poplatkovi",
-      "A napriek tomu hovorím, že nezatracujem dneska ani jednu z týchto chciest."
+      "A napriek tomu hovorím, že nezatracujem dneska ani jednu z týchto chciest.",
+      "Žiaden človek nedokáže dať toľko lásky človeku, ako dokáže dať len človek človeku. ",
+      "Viete čo, urobím to tak, že nikdy. Pretože je to armáda Slovenskej republiky, ja si tu hodnosť zaslúžim. Je to kapitán v zálohe.",
+      "Ja neznášam chlapov, ktorí sú hysterici, preskakuje im hlas a vykrikujú a demonštrujú na tribúnach v tričke a potom nevedia si dať normálne ani pivo a porozprávať sa ako chlapi.",
+      "Navrhujeme to, aby vždy vo výplatný termín júnový, júlový, júnový, to znamená vo výplatnom termeni za kalendárny mesiac mája a vo výplatný termín decembrový, bol",
+      "Vláda nestojí a nepadá na žiadnom ministrovi a na žiadnom koncesionárskom poplatkovi...",
+      "Dáme, ktorá sa vryla do srdciach...",
+      "Otváram rozpravu o tomtom bode programu.",
+      "Poslanec poslanca uráža spôsobom, akým uráža.",
+      "Dokedy my budeme sa taktom triešiť.",
+      "Nechcem robiť niekoho z hrdinu, kto ním nie je.",
+      "Kým v Národnej rade budú poslanci jesť horalky, chodiť v tričkách a sypať po pléne rôzne predmety, nemôže byť parlament vizitkou národa."
     ]
   };
 
@@ -42,6 +54,9 @@ class InputText extends Component {
     console.log("WWW", str);
     if (str === undefined || str == "") {
       return "Povec mi čo mám zadať do textu. Ja kpt kpt poviem čo si myslím.";
+    }
+    if (str.split(" ").length < 2) {
+      return str;
     } else {
       let result = [];
       //result = str.match(/[^\.!\?]+[\.!\?]+/g);
@@ -84,6 +99,7 @@ class InputText extends Component {
       return outputArray;
     }
   };
+
   render() {
     console.log("prosp", this.props);
     return (
@@ -91,11 +107,11 @@ class InputText extends Component {
         <textarea
           className="form-control"
           id="exampleTextarea"
-          maxlength="50"
+          maxLength="200"
           rows="2"
           value={this.state.value}
           onChange={e => this.handleChange(e.target)}
-          placeholder="Tu povec co poviem ti."
+          placeholder="Tu povec co poviem ti v bubline ja."
         />
         <div>
           <button
@@ -114,7 +130,7 @@ class InputText extends Component {
             className="btn btn-light btn-cust"
             onClick={e => this.props.newProp2(this.pickText())}
           >
-            Generuj text!
+            Náhodný text
           </button>
         </div>
       </div>

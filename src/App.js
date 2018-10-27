@@ -4,15 +4,22 @@ import "./App.css";
 import InputText from "./components/inputText";
 import Image from "./components/image";
 import Bubble from "./components/bubble";
+import Footer from "./components/footer";
 
 class App extends Component {
   state = {
     value: 1,
-    bubbleValue: "Ahoj ja som dusan? Ako sa mas Milos?",
+    bubbleValue:
+      "Ahoj ja som tvoj generátor náhodný, skomlím čo mi povieš ty. Tak to napíš dole a uvidím ja čo poviem ti!",
     inputValue: "",
     teststate: "Milos"
   };
 
+  handleKeyPress(target) {
+    if (target.charCode == 13) {
+      alert("Enter clicked!!!");
+    }
+  }
   handleSubmit = value => {
     const NS = { ...this.state };
     NS.bubbleValue = value;
@@ -40,6 +47,7 @@ class App extends Component {
             newProp2={this.handleSubmitSecond}
           />
         </header>
+        <Footer />
       </div>
     );
   }

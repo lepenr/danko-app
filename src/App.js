@@ -9,13 +9,21 @@ class App extends Component {
   state = {
     value: 1,
     bubbleValue: "Ahoj ja som dusan? Ako sa mas Milos?",
-    inputValue: ""
+    inputValue: "",
+    teststate: "Milos"
   };
 
   handleSubmit = value => {
     const NS = { ...this.state };
     NS.bubbleValue = value;
     this.setState(NS);
+  };
+
+  handleSubmitSecond = value2 => {
+    const NS = { ...this.state };
+    NS.bubbleValue = value2;
+    this.setState(NS);
+    console.log("pressed", NS.teststate);
   };
 
   render() {
@@ -29,6 +37,7 @@ class App extends Component {
             newProp={this.handleSubmit}
             inputValue={this.state.inputValue}
             value={this.state.value}
+            newProp2={this.handleSubmitSecond}
           />
         </header>
       </div>
